@@ -1,0 +1,25 @@
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+}
+
+.img-height {
+  height: 1.5rem;
+}
+
+.card-bg {
+  background-color: white;
+}
+
+.card-bg:hover {
+  background-color: #f9f9f9;
+}
+
+.clear-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.clear-link:hover {
+  text-decoration: none;
+  color: #000;
+}
