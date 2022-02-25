@@ -1,5 +1,5 @@
 # Steps to run on local
-This project was created using Anaconda as the primary package manager, thus the requirements.txt file is formatted to be read by an Anaconda interpreter and the steps will assume that you are also running Anaconda on your machine. Alternatively, you may use pip and a standalone version of Python3 but keep in mind your commands may differ.
+This project was created using Anaconda as the primary package manager, thus the requirements.txt file is formatted to be read by an Anaconda interpreter and the steps will assume that you are also running Anaconda on your machine. Pip was used to install seperate packages within the environment, accidentally.
 ## What you need installed
 ### Anaconda
 You can download it here: <br />
