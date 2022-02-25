@@ -1,5 +1,5 @@
 # Steps to run on local
-This project was created using Anaconda as the primary package manager, thus the requirements.txt file is formatted to be read by an Anaconda interpreter and the steps will assume that you are also running Anaconda on your machine. Pip was used to install seperate packages within the environment, accidentally.
+This project was created using Anaconda as the primary package manager, thus the requirements.txt file is formatted to be read by an Anaconda interpreter and the steps will assume that you are also running Anaconda on your machine. Pip was used to install seperate packages within the environment accidentally for this project, will manually transfer all packages to those available through the conda in the future.
 ## What you need installed
 ### Anaconda
 You can download it here: <br />
@@ -36,4 +36,33 @@ While in the root of the directory where you cloned the repo, run
 ```
 alembic init alembic
 ```
-This will create all the 
+This will create your alembic migration environment. You then need to change two pieces of code within some of these files.
+<br />
+Within /alembic/env.py add this import to the top of the file:
+```
+from models import Base
+```
+And change line 21 from:
+```
+target_metadata = None
+```
+to:
+```
+target_metadata = Base.metadata
+```
+Then, in alembic.ini, change line 51 from:
+```
+sqlalchemy.url = sqlite://sqlite.com
+```
+to:
+```
+sqlalchemy.url = sqlite:///./cryp_practice.db
+
+```
+Congrats, your db should not be set-up!
+### Step 4: Run the program!
+While in the root of the directory where the repo was cloned, run 
+```
+uvicorn main:app --reload
+```
+Enjoy!
