@@ -1,0 +1,5 @@
+/alembic
+/__pycache__
+.env
+alembic.ini
+cryp_practice.db
