@@ -10,7 +10,7 @@ Enjoy tracking!
 Non-protected route
 ![image](https://user-images.githubusercontent.com/73137447/155801709-91177fd1-22b3-4fde-b7e8-2c8078ecc170.png)
 ## Search feature
-Will return a match if any instance of the search string is found within the currenc name (case-insensitive)
+Will return a match if any instance of the search string is found within the currency name (case-insensitive)
 ![image](https://user-images.githubusercontent.com/73137447/155802940-e23aeae7-ac06-4a31-96de-047122e899e0.png)
 ## Clicking on coins
 ![image](https://user-images.githubusercontent.com/73137447/155803039-a96d74d5-e174-4b7f-bad9-679bcf4c3519.png)
