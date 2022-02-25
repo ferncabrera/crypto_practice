@@ -1,1 +1,2 @@
-# crypto_practice
+# Steps to run on local
+## Dependencies
