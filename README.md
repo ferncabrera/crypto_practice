@@ -1,5 +1,5 @@
 # About
-Crypto practice is a solution for those who are wanting to track and maximize profits while minigating loss by focusing on tracking _specific, individual_ crypto currency trades. All the wallets I find online are overbuilt and an huge amount of external calculation is required to simply see if you are profiting or losing on a trade, they merge are your coin holdings into one large pot and it becomes impossible to differentiate purchases made during different times spans. Crypto Practice simplifies this all by calculating exact loss or gain made per trade all while tracking your total history in a customizable wallet.
+Crypto practice is a solution for those who are wanting to track and maximize profits while minigating loss by focusing on tracking _specific, individual_ crypto currency trades. All the wallets online are overbuilt and a huge amount of external calculation is required to simply see if you are profiting or losing on a trade as they merge your coin holdings into one large pot and it becomes impossible to differentiate purchases made during different times spans. Crypto Practice simplifies this all by calculating exact loss or gain made per trade all while tracking your total history in a customizable wallet.
 
 <br />
 
