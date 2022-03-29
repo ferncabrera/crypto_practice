@@ -111,7 +111,7 @@ to:
 sqlalchemy.url = sqlite:///./cryp_practice.db
 
 ```
-Congrats, your db should not be set-up!
+Congrats, your db should now be set-up!
 ### Step 4: Run the program!
 While in the root of the directory where the repo was cloned, run 
 ```
