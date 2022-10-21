@@ -128,7 +128,12 @@ alembic upgrade head
 to begin using the revision we created before that has all the models loaded.
 <br/>
 Congrats, your db should now be set-up!
-### Step 4: Run the program!
+### Step 4: Create your .env
+While in the root folder of the repo, create a .env file with the following env variable:
+```
+SECRET_KEY=put_any_secrect_key
+```
+### Step 5: Run the program!
 While in the root of the directory where the repo was cloned, run 
 ```
 uvicorn main:app --reload
