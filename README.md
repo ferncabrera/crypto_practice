@@ -71,18 +71,25 @@ https://docs.github.com/en/repositories/creating-and-managing-repositories/cloni
 <br />
 ### Step 2: Create python environment and install dependencies
 Optionally, but highly recommnded, create an Anaconda environment for this project. <br/>
+####UPDATE: For some reason fastapi-login is not availabele through any anaconda channels I could find<br/>
+since this project depends on this package, I have made it so that all packages are installed through pip. <br/>
+There is now no real need for anaconda environments now for this reason but the steps will show how to setup with an Anaconda Env anyway.
+<br/>
 ```
-conda create --name your_env_name_here --file requirements.txt
+conda create --name your_env_name_here
 ```
 Activate your environment:
 ```
-conda activatr you_env_name_here
+conda activate you_env_name_here
 ```
-Then install all the pip packages into your Anaconda env from the pip.txt file. <br />
+Then install pip@21.2.4 <br />
 ```
-pip install -r pip.txt
+conda install pip=21.2.4
 ```
-Congrats, you have all the required packages inside your environments!
+Now install all dependencies using pip from requirements.txt
+```
+pip install -r requirements.txt
+```
 ### Step 3: Set-up db
 While in the root of the directory where you cloned the repo, run
 ```
@@ -109,8 +116,17 @@ sqlalchemy.url = sqlite://sqlite.com
 to:
 ```
 sqlalchemy.url = sqlite:///./cryp_practice.db
-
 ```
+Now time to populate our db with the tables using alembic, run this command while in the root of your repo:
+```
+alembic revision --autogenerate -m "First revision"
+```
+Then run:
+```
+alembic upgrade head
+```
+to begin using the revision we created before that has all the models loaded.
+<br/>
 Congrats, your db should now be set-up!
 ### Step 4: Run the program!
 While in the root of the directory where the repo was cloned, run 
