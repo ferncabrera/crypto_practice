@@ -141,7 +141,7 @@ def add_coin(request: Request, search_coin: str = Form(None), all_coins: List[Di
         template_dict["all_coins"] = return_coins
         template_dict["invalid_coin"] = True
         return templates.TemplateResponse("wallet.html", template_dict, status_code=status.HTTP_400_BAD_REQUEST)
-    purchase_price = round(coin_price[coin_name]["usd"],3)
+    purchase_price = round(coin_price[coin_name.lower()]["usd"],3)
     added = crud.add_coin(
         db=db, coin=schemas.CoinCreate(coin_name=coin_name.lower(), amount=amount, purchase_price=purchase_price), id=user.id)
     if not added:
