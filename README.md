@@ -1,5 +1,5 @@
 # About
-Crypto practice is a solution for those who are wanting to track and maximize profits while minigating loss by focusing on tracking _specific, individual_ crypto currency trades. All the wallets I find online are overbuilt and an huge amount of external calculation is required to eb able to see if you are profiting or losing on a trade, they merge are your coin holdings into one large pot and it becomes impossible to differentiate pruchases made during different times. Crypto Practice simplifies this all by calculating exact loss or gain made per trade all while tracking your total history in a customizable wallet.
+Crypto practice is a solution for those who are wanting to track and maximize profits while minigating loss by focusing on tracking _specific, individual_ crypto currency trades. All the wallets online are overbuilt and a huge amount of external calculation is required to simply see if you are profiting or losing on a trade as they merge your coin holdings into one large pot and it becomes impossible to differentiate purchases made during different times spans. Crypto Practice simplifies this all by calculating exact loss or gain made per trade all while tracking your total history in a customizable wallet.
 
 <br />
 
@@ -10,7 +10,7 @@ Enjoy tracking!
 Non-protected route
 ![image](https://user-images.githubusercontent.com/73137447/155801709-91177fd1-22b3-4fde-b7e8-2c8078ecc170.png)
 ## Search feature
-Will return a match if any instance of the search string is found within the currenc name (case-insensitive)
+Will return a match if any instance of the search string is found within the currency name (case-insensitive)
 ![image](https://user-images.githubusercontent.com/73137447/155802940-e23aeae7-ac06-4a31-96de-047122e899e0.png)
 ## Clicking on coins
 ![image](https://user-images.githubusercontent.com/73137447/155803039-a96d74d5-e174-4b7f-bad9-679bcf4c3519.png)
@@ -71,18 +71,25 @@ https://docs.github.com/en/repositories/creating-and-managing-repositories/cloni
 <br />
 ### Step 2: Create python environment and install dependencies
 Optionally, but highly recommnded, create an Anaconda environment for this project. <br/>
+####UPDATE: For some reason fastapi-login is not availabele through any anaconda channels I could find<br/>
+since this project depends on this package, I have made it so that all packages are installed through pip. <br/>
+There is now no real need for anaconda environments now for this reason but the steps will show how to setup with an Anaconda Env anyway.
+<br/>
 ```
-conda create --name your_env_name_here --file requirements.txt
+conda create --name your_env_name_here
 ```
 Activate your environment:
 ```
-conda activatr you_env_name_here
+conda activate you_env_name_here
 ```
-Then install all the pip packages into your Anaconda env from the pip.txt file. <br />
+Then install pip@21.2.4 <br />
 ```
-pip install -r pip.txt
+conda install pip=21.2.4
 ```
-Congrats, you have all the required packages inside your environments!
+Now install all dependencies using pip from requirements.txt
+```
+pip install -r requirements.txt
+```
 ### Step 3: Set-up db
 While in the root of the directory where you cloned the repo, run
 ```
@@ -109,10 +116,24 @@ sqlalchemy.url = sqlite://sqlite.com
 to:
 ```
 sqlalchemy.url = sqlite:///./cryp_practice.db
-
 ```
-Congrats, your db should not be set-up!
-### Step 4: Run the program!
+Now time to populate our db with the tables using alembic, run this command while in the root of your repo:
+```
+alembic revision --autogenerate -m "First revision"
+```
+Then run:
+```
+alembic upgrade head
+```
+to begin using the revision we created before that has all the models loaded.
+<br/>
+Congrats, your db should now be set-up!
+### Step 4: Create your .env
+While in the root folder of the repo, create a .env file with the following env variable:
+```
+SECRET_KEY=put_any_secrect_key
+```
+### Step 5: Run the program!
 While in the root of the directory where the repo was cloned, run 
 ```
 uvicorn main:app --reload
